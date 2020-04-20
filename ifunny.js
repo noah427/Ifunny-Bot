@@ -75,24 +75,25 @@ module.exports.catalog = async (catalogId) => {
   for (let img of $(".grid__image").toArray()) {
     results.push({ src: img.attribs["data-src"], alt: img.attribs.alt });
   }
-  return results
+  return results;
 };
 
 module.exports.tags = async (tagName) => {
   url = `https://ifunny.co/tags/${tagName}`;
 
   let html;
-  try {
-    html = (await got(url)).body;
-  } catch (e) {
+
+  html = (await got(url)).body;
+
+  let $ = cheerio.load(html);
+
+  if ($(".sign__text").html() == "no memes yet") {
     return -1;
   }
 
-  let $ = cheerio.load(html);
   let results = [];
   for (let img of $(".grid__image").toArray()) {
     results.push({ src: img.attribs["data-src"], alt: img.attribs.alt });
   }
-  return results
-
-}
+  return results;
+};
