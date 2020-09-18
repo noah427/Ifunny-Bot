@@ -43,7 +43,7 @@ function makeEmbed({ src, alt }) {
 
   embed.setImage(src);
 
-  embed.setFooter("Written by redacted#1115 (he didn't want to)");
+  embed.setFooter("Written by redacted#4242 (bullied into this by brian)");
 
   return embed;
 }
