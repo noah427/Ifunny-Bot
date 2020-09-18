@@ -13,7 +13,7 @@ module.exports = class extends Command {
       permLevel: 0,
       botPerms: [],
       requiredSettings: [],
-      description: "",
+      description: "ifunny tag [tag name]",
       quotedStringSupport: false,
       usage: "<tag:string>",
       usageDelim: undefined,
